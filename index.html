@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
 <title>hi lol</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +13,10 @@
 
 <style>
 /* ── tokens ────────────────────────────────────────────────────────── */
+
 :root {
+  color-scheme: dark;
+
   --ground:    #0b0a0e;
   --ground-2:  #121017;
   --ground-3:  #1a1721;
@@ -87,11 +92,11 @@ em { font-style: italic; }
 .reveal-text {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
 }
 .reveal-fade {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 #section-tracker {
   position: fixed;
@@ -105,6 +110,14 @@ em { font-style: italic; }
   z-index: 900;
   mix-blend-mode: difference;
   transition: opacity 0.3s;
+}
+
+
+/* ── accessibility ─────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 /* ── layout ────────────────────────────────────────────────────────── */
@@ -847,6 +860,13 @@ gsap.ticker.lagSmoothing(0)
 /* ── scroll animations ─────────────────────────────────────────────── */
 const mm = gsap.matchMedia();
 
+
+mm.add("(prefers-reduced-motion: reduce)", () => {
+  gsap.set('.reveal-text, .reveal-fade', { opacity: 1, y: 0, clipPath: 'none', clearProps: 'all' });
+  gsap.set('.parallax-img', { scale: 1, yPercent: 0, clearProps: 'all' });
+  document.body.style.background = 'var(--ground)';
+});
+
 mm.add("(prefers-reduced-motion: no-preference)", () => {
   
   // 1. Color atmosphere continuous shift
@@ -893,8 +913,8 @@ mm.add("(prefers-reduced-motion: no-preference)", () => {
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1,
-      ease: "power3.out",
+      duration: 1.2,
+      ease: "power3.out", stagger: 0.1,
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
@@ -906,8 +926,8 @@ mm.add("(prefers-reduced-motion: no-preference)", () => {
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1,
-      ease: "power2.out",
+      duration: 1.2,
+      ease: "power2.out", stagger: 0.15,
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
