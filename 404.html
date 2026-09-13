@@ -6,144 +6,106 @@
 <title>404 — namanipie</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ground: #0d0c0b;
-  --ink: #e4e0d8;
-  --ink-dim: #6b6660;
-  --ink-faint: #2a2825;
-  --red: #8a6fbd;
-  --f-display: 'Playfair Display', Georgia, serif;
-  --f-body: 'DM Sans', system-ui, sans-serif;
-  --f-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --ground:    #0a0a0a;
+  --ink:       #ededed;
+  --ink-dim:   #999999;
+  --ink-faint: #4a4a4a;
+  --accent-red:    #c93a3e;
+  --f-display: 'Instrument Serif', Georgia, serif;
+  --f-body:    'Inter', system-ui, sans-serif;
+  --f-mono:    'JetBrains Mono', 'Courier New', monospace;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { -webkit-font-smoothing: antialiased; }
 body {
   font-family: var(--f-body);
   background: var(--ground);
   color: var(--ink);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 40px 24px;
   overflow: hidden;
 }
 .grain {
   position: fixed; inset: 0; pointer-events: none; z-index: 100;
-  opacity: 0.032;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px;
-  animation: grain-shift 8s steps(7) infinite;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-@keyframes grain-shift {
-  0%   { background-position: 0 0 }
-  14%  { background-position: 25% 18% }
-  28%  { background-position: -18% 34% }
-  42%  { background-position: 32% -12% }
-  57%  { background-position: -8% 28% }
-  71%  { background-position: 18% -22% }
-  85%  { background-position: -28% 8% }
-  100% { background-position: 0 0 }
-}
-.code {
-  font-family: var(--f-mono);
-  font-size: clamp(5rem, 18vw, 12rem);
-  font-weight: 300;
-  letter-spacing: -0.06em;
-  line-height: 0.9;
-  color: var(--ink-faint);
-  margin-bottom: 32px;
-  transition: color 1.2s ease, text-shadow 1.2s ease;
-  cursor: default;
+h1 {
+  font-family: var(--f-display);
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink-dim);
+  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s;
   user-select: none;
 }
-.code.glow {
-  color: var(--red);
-  text-shadow: 0 0 60px rgba(138,111,189,0.2);
+h1.glow {
+  color: var(--accent-red);
+  text-shadow: 0 0 40px rgba(201, 58, 62, 0.4);
 }
-.message {
-  font-family: var(--f-display);
-  font-weight: 300;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: var(--ink-dim);
-  letter-spacing: -0.02em;
-  margin-bottom: 48px;
-  max-width: 400px;
-}
-.message em {
-  font-style: italic;
-  color: var(--ink);
-}
-.back {
+p {
   font-family: var(--f-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  color: var(--ink-dim);
-  border-bottom: 1px solid var(--ink-faint);
-  padding-bottom: 3px;
-  transition: color 0.25s, border-color 0.25s;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-top: 24px;
 }
-.back:hover {
+a {
+  margin-top: 48px;
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--ink);
-  border-color: var(--ink-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-faint);
+  padding-bottom: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+a:hover {
+  border-color: var(--ink);
+  color: var(--accent-red);
 }
 .whisper {
-  position: fixed;
-  bottom: 20px;
-  font-family: var(--f-mono);
-  font-size: 0.5rem;
-  letter-spacing: 0.12em;
-  color: var(--ink-faint);
-  opacity: 0;
-  transition: opacity 0.6s;
-}
-.whisper.show { opacity: 1; }
-@media (prefers-reduced-motion: reduce) {
-  .grain { animation: none; }
+  position: fixed; bottom: 32px;
+  font-family: var(--f-mono); font-size: 0.65rem; color: var(--ink-faint);
+  opacity: 0; transition: opacity 1s;
 }
 </style>
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
-<div class="code" id="code404" aria-hidden="true">404</div>
-<p class="message">well.<br>that wasn't <em>supposed</em> to happen.</p>
-<a href="/" class="back">go back →</a>
-<div class="whisper" id="whisper" aria-hidden="true"></div>
+<div class="grain"></div>
+
+<h1 id="errorTitle">404</h1>
+<p>there's nothing here.</p>
+<a href="/">go back ↗</a>
+
+<div class="whisper" id="whisper">okay fine. hi. now go back.</div>
 
 <script>
-// easter egg: click 404 three times
-(function() {
-  const code = document.getElementById('code404');
-  const whisper = document.getElementById('whisper');
-  let clicks = 0;
-  let timer;
-  const messages = [
-    'you\'re still here?',
-    'there\'s nothing to find.',
-    'okay fine. hi. now go back.'
-  ];
-  code.addEventListener('click', () => {
-    clicks++;
-    clearTimeout(timer);
-    timer = setTimeout(() => { clicks = 0; }, 3000);
-    if (clicks <= 3) {
-      code.classList.add('glow');
-      whisper.textContent = messages[Math.min(clicks - 1, messages.length - 1)];
-      whisper.classList.add('show');
-      setTimeout(() => {
-        code.classList.remove('glow');
-        whisper.classList.remove('show');
-      }, 2500);
-    }
-    if (clicks >= 3) clicks = 0;
-  });
-})();
+let clicks = 0;
+const title = document.getElementById('errorTitle');
+const whisper = document.getElementById('whisper');
+const msg = document.querySelector('p');
+
+title.addEventListener('click', () => {
+  clicks++;
+  if (clicks === 1) {
+    msg.innerText = "you're still here?";
+  } else if (clicks === 2) {
+    msg.innerText = "seriously, there's nothing to find.";
+  } else if (clicks === 3) {
+    title.classList.add('glow');
+    whisper.style.opacity = '1';
+  }
+});
 </script>
 </body>
 </html>
