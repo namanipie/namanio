@@ -35,7 +35,7 @@
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
   font-family: var(--f-body);
-  background: var(--ground) radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  background: var(--ground-current, var(--ground))  radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
   background-attachment: fixed;
   color: var(--ink);
   line-height: 1.5;
@@ -79,6 +79,31 @@ em { font-style: italic; }
   color: var(--ink-faint);
   display: block;
   margin-bottom: 16px;
+}
+
+
+/* ── scroll animations & tracker ────────────────────────────────────── */
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0;
+  transform: translateY(30px);
+}
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(20px);
+}
+#section-tracker {
+  position: fixed;
+  bottom: 32px;
+  right: var(--gutter);
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  z-index: 900;
+  mix-blend-mode: difference;
+  transition: opacity 0.3s;
 }
 
 /* ── layout ────────────────────────────────────────────────────────── */
@@ -140,7 +165,7 @@ nav {
 }
 .nav-overlay {
   position: fixed; inset: 0; z-index: 800;
-  background: var(--ground);
+  background: var(--ground-current, var(--ground)) ;
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
   gap: 32px;
@@ -313,7 +338,7 @@ nav {
 }
 .fp-mockup {
   width: 65%; height: 85%;
-  background: var(--ground);
+  background: var(--ground-current, var(--ground)) ;
   border-radius: 20px;
   border: 1px solid var(--ink-faint);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
@@ -522,6 +547,8 @@ footer {
 
 <div class="cursor-dot" id="cursorDot"></div>
 
+<div id="section-tracker">01 / top</div>
+
 <nav>
   <div class="nav-logo" onclick="window.scrollTo(0,0)">namanipie</div>
   <div class="nav-links">
@@ -543,31 +570,31 @@ footer {
 <div class="container">
 
   <section class="hero" id="hero">
-    <h1 class="hero-heading">hi, i'm <em>naman.</em><br>cs student. building things.</h1>
-    <p class="hero-sub">trying to understand how computers work, mostly by breaking them and starting over.</p>
+    <h1 class="hero-heading reveal-text">hi, i'm <em>naman.</em><br>cs student. building things.</h1>
+    <p class="hero-sub reveal-fade">trying to understand how computers work, mostly by breaking them and starting over.</p>
   </section>
 
   <section id="about">
-    <span class="eyebrow">context</span>
-    <h2 class="section-heading"><em>currently</em></h2>
+    <span class="eyebrow reveal-fade">context</span>
+    <h2 class="section-heading reveal-text"><em>currently</em></h2>
     
     <div class="learning-grid">
-       <div class="l-item">
+       <div class="l-item reveal-fade">
          <h3>java + dsa</h3>
          <p>working through data structures from scratch. linked lists, trees, sparse matrices. doing it the hard way to actually get it.</p>
        </div>
-       <div class="l-item">
+       <div class="l-item reveal-fade">
          <h3>web dev</h3>
          <p>html, css, js. building things like this site to figure out what works and what looks good.</p>
        </div>
-       <div class="l-item">
+       <div class="l-item reveal-fade">
          <h3>linux / git</h3>
          <p>broke my arch install three times. finally getting comfortable navigating the terminal.</p>
        </div>
     </div>
     
     <div class="skills-inline">
-      <span class="eyebrow">tools & tech</span>
+      <span class="eyebrow reveal-fade">tools & tech</span>
       <div class="skill-tags">
         <span>Java</span>
         <span>Python</span>
@@ -583,11 +610,11 @@ footer {
   </section>
 
   <section id="projects">
-    <span class="eyebrow">work</span>
-    <h2 class="section-heading"><em>projects</em></h2>
+    <span class="eyebrow reveal-fade">work</span>
+    <h2 class="section-heading reveal-text"><em>projects</em></h2>
     
     <div class="featured-project">
-      <div class="fp-content">
+      <div class="fp-content reveal-fade">
         <div class="fp-status"><span class="pulse"></span> in development</div>
         <h3 class="fp-title">Console</h3>
         <p class="fp-desc">a mobile dashboard tailored for students. fetches institutional data via a custom python scraper, handles local caching, visualizes attendance, and delivers push notifications.</p>
@@ -596,7 +623,7 @@ footer {
         </div>
         <a href="https://github.com/valoplayer/academia_app" class="fp-link" target="_blank">view on github ↗</a>
       </div>
-      <div class="fp-visual">
+      <div class="fp-visual reveal-fade">
          <div class="fp-mockup">
            <div class="m-header"></div>
            <div class="m-card">
@@ -613,12 +640,12 @@ footer {
     </div>
     
     <div class="other-projects">
-      <a href="https://github.com/valoplayer" class="op-card" target="_blank">
+      <a href="https://github.com/valoplayer" class="op-card reveal-fade" target="_blank">
         <h4>java / dsa practice</h4>
         <p>building core structures by hand to actually understand the fundamentals.</p>
         <span class="op-link">github ↗</span>
       </a>
-      <div class="op-card" style="cursor: default;">
+      <div class="op-card reveal-fade" style="cursor: default;">
         <h4>this website</h4>
         <p>a personal corner of the internet. the only project that never feels done.</p>
         <span class="op-link">you are here</span>
@@ -627,42 +654,42 @@ footer {
   </section>
 
   <section id="interests">
-    <span class="eyebrow">visuals</span>
-    <h2 class="section-heading"><em>interests</em></h2>
+    <span class="eyebrow reveal-fade">visuals</span>
+    <h2 class="section-heading reveal-text"><em>interests</em></h2>
     
     <div class="visual-wall">
       <div class="vw-item vw-1">
-        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="Dark gaming setup" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="Dark gaming setup" loading="lazy" class="parallax-img">
         <span class="vw-label">tech / setups</span>
       </div>
       <div class="vw-item vw-2">
-        <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&q=80" alt="Mechanical keyboard" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&q=80" alt="Mechanical keyboard" loading="lazy" class="parallax-img">
         <span class="vw-label">hardware</span>
       </div>
       <div class="vw-item vw-3">
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="Retro CRT monitor" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80" alt="Retro CRT monitor" loading="lazy" class="parallax-img">
         <span class="vw-label">retro tech</span>
       </div>
       <div class="vw-item vw-4">
-        <img src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=700&q=80" alt="Brutalist architecture" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=700&q=80" alt="Brutalist architecture" loading="lazy" class="parallax-img">
         <span class="vw-label">architecture</span>
       </div>
       <div class="vw-item vw-5">
-        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&q=80" alt="Dark ink texture" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&q=80" alt="Dark ink texture" loading="lazy" class="parallax-img">
         <span class="vw-label">manga / ink</span>
       </div>
       <div class="vw-item vw-6">
-        <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=700&q=80" alt="Red neon atmosphere" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=700&q=80" alt="Red neon atmosphere" loading="lazy" class="parallax-img">
         <span class="vw-label">atmosphere</span>
       </div>
     </div>
   </section>
 
   <section id="links">
-    <span class="eyebrow">elsewhere</span>
-    <h2 class="section-heading">find <em>me.</em></h2>
+    <span class="eyebrow reveal-fade">elsewhere</span>
+    <h2 class="section-heading reveal-text">find <em>me.</em></h2>
     
-    <div class="links-list">
+    <div class="links-list reveal-fade">
       <a href="https://github.com/namanipie" target="_blank">github <span>↗</span></a>
       <a href="https://www.linkedin.com/in/namannkumar/" target="_blank">linkedin <span>↗</span></a>
       <a href="mailto:namanrathore1507@gmail.com">email <span>↗</span></a>
@@ -790,5 +817,127 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
+
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+/* ── smooth scroll & gsap setup ────────────────────────────────────── */
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+gsap.ticker.lagSmoothing(0)
+
+/* ── scroll animations ─────────────────────────────────────────────── */
+const mm = gsap.matchMedia();
+
+mm.add("(prefers-reduced-motion: no-preference)", () => {
+  
+  // 1. Color atmosphere continuous shift
+  // Shifts background ground color as we scroll down
+  gsap.to("body", {
+    "--ground-current": "#120e17", // subtly violet
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#projects",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+  
+  gsap.to("body", {
+    "--ground-current": "#0b0a0e", // back to dark
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#links",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+
+  // 2. Parallax
+  gsap.utils.toArray('.parallax-img').forEach(img => {
+    gsap.to(img, {
+      yPercent: 15,
+      scale: 1.05,
+      ease: "none",
+      scrollTrigger: {
+        trigger: img.parentElement,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  });
+
+  // 3. Reveals
+  gsap.utils.toArray('.reveal-text').forEach(el => {
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      }
+    });
+  });
+
+  gsap.utils.toArray('.reveal-fade').forEach(el => {
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      }
+    });
+  });
+  
+  // 4. Section Tracker
+  const sections = document.querySelectorAll('section');
+  const tracker = document.getElementById('section-tracker');
+  
+  sections.forEach((sec, i) => {
+    ScrollTrigger.create({
+      trigger: sec,
+      start: "top center",
+      end: "bottom center",
+      onEnter: () => updateTracker(i + 1, sec.id),
+      onEnterBack: () => updateTracker(i + 1, sec.id)
+    });
+  });
+  
+  function updateTracker(num, name) {
+    const padded = num.toString().padStart(2, '0');
+    gsap.to(tracker, { opacity: 0, duration: 0.2, onComplete: () => {
+      tracker.innerText = `${padded} / ${name}`;
+      gsap.to(tracker, { opacity: 1, duration: 0.2 });
+    }});
+  }
+
+});
+</script>
+
 </body>
 </html>
