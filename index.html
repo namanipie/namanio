@@ -11,16 +11,16 @@
 <style>
 /* ── tokens ────────────────────────────────────────────────────────── */
 :root {
-  --ground:    #0a0a0a;
-  --ground-2:  #121212;
-  --ground-3:  #181818;
+  --ground:    #0b0a0e;
+  --ground-2:  #121017;
+  --ground-3:  #1a1721;
   --ink:       #ededed;
   --ink-dim:   #999999;
-  --ink-faint: #4a4a4a;
+  --ink-faint: #504860;
   
-  --accent-red:    #c93a3e;
-  --accent-purple: #7b61ff;
-  --accent-blue:   #3a82f6;
+  --accent-red:    #a78bfa;
+  --accent-purple: #8b5cf6;
+  --accent-blue:   #c4b5fd;
 
   --f-display: 'Instrument Serif', Georgia, serif;
   --f-body:    'Inter', system-ui, sans-serif;
@@ -35,7 +35,8 @@
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
   font-family: var(--f-body);
-  background: var(--ground);
+  background: var(--ground) radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  background-attachment: fixed;
   color: var(--ink);
   line-height: 1.5;
   overflow-x: hidden;
@@ -588,7 +589,7 @@ footer {
     <div class="featured-project">
       <div class="fp-content">
         <div class="fp-status"><span class="pulse"></span> in development</div>
-        <h3 class="fp-title">Academia</h3>
+        <h3 class="fp-title">Console</h3>
         <p class="fp-desc">a mobile dashboard tailored for students. fetches institutional data via a custom python scraper, handles local caching, visualizes attendance, and delivers push notifications.</p>
         <div class="fp-stack">
           <span>Flutter</span><span>Dart</span><span>Firebase</span><span>Python</span>
@@ -664,7 +665,8 @@ footer {
     <div class="links-list">
       <a href="https://github.com/namanipie" target="_blank">github <span>↗</span></a>
       <a href="https://www.linkedin.com/in/namannkumar/" target="_blank">linkedin <span>↗</span></a>
-      <a href="https://open.spotify.com/user/kmw8rc5uma8aeo76gg433qbxg" target="_blank">spotify <span>↗</span></a>
+      <a href="mailto:namanrathore1507@gmail.com">email <span>↗</span></a>
+      <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('nam4n'); const s=this.querySelector('span'); const o=s.innerText; s.innerText='copied!'; setTimeout(()=>s.innerText=o, 2000);">discord <span>nam4n</span></a>
     </div>
   </section>
 
@@ -712,7 +714,7 @@ class Particle {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+    ctx.fillStyle = `rgba(180, 160, 255, ${this.alpha})`;
     ctx.fill();
   }
 }

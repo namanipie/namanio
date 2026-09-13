@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ground:    #0a0a0a;
+  --ground:    #0b0a0e;
   --ink:       #ededed;
   --ink-dim:   #999999;
-  --ink-faint: #4a4a4a;
-  --accent-red:    #c93a3e;
+  --ink-faint: #504860;
+  --accent-red:    #a78bfa;
   --f-display: 'Instrument Serif', Georgia, serif;
   --f-body:    'Inter', system-ui, sans-serif;
   --f-mono:    'JetBrains Mono', 'Courier New', monospace;
@@ -21,7 +21,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: var(--f-body);
-  background: var(--ground);
+  background: var(--ground) radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
   color: var(--ink);
   height: 100vh;
   display: flex;
@@ -47,7 +47,7 @@ h1 {
 }
 h1.glow {
   color: var(--accent-red);
-  text-shadow: 0 0 40px rgba(201, 58, 62, 0.4);
+  text-shadow: 0 0 40px rgba(167, 139, 250, 0.4);
 }
 p {
   font-family: var(--f-mono);
