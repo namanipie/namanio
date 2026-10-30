@@ -5,14 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="darkreader-lock">
-<title>namanipie</title>
+<title>hi lol</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="namanipie">
+<meta property="og:description" content="cs student building things that break, learning from the pieces.">
+<meta property="og:url" content="https://namanipie.github.io/namanio/">
+<meta property="og:image" content="https://namanipie.github.io/namanio/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="namanipie">
+<meta name="twitter:description" content="cs student building things that break, learning from the pieces.">
+<meta name="description" content="namanipie — cs student building things that break, learning from the pieces.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-/* ── tokens ────────────────────────────────────────────────────────── */
+/* â”€â”€ tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   color-scheme: dark;
   --ground:    #0a0a0f;
@@ -35,7 +44,7 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ── base ──────────────────────────────────────────────────────────── */
+/* â”€â”€ base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 body {
@@ -59,7 +68,7 @@ em { font-style: italic; }
 ::-webkit-scrollbar-track { background: var(--ground); }
 ::-webkit-scrollbar-thumb { background: var(--ink-faint); border-radius: 3px; }
 
-/* ── background layers ─────────────────────────────────────────────── */
+/* â”€â”€ background layers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .grain {
   position: fixed; inset: 0; pointer-events: none; z-index: 100;
   opacity: 0.055;
@@ -81,7 +90,7 @@ em { font-style: italic; }
   transition: opacity 1.5s ease;
 }
 
-/* ── section bleed dividers ────────────────────────────────────────── */
+/* â”€â”€ section bleed dividers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .bleed {
   position: relative;
   height: clamp(60px, 10vh, 120px);
@@ -116,7 +125,7 @@ em { font-style: italic; }
   transition: transform 0.1s linear;
 }
 
-/* ── scroll progress ───────────────────────────────────────────────── */
+/* â”€â”€ scroll progress â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #scroll-progress {
   position: fixed; top: 0; left: 0; z-index: 950;
   height: 1px; width: 100%;
@@ -127,7 +136,7 @@ em { font-style: italic; }
   transform: scaleX(0);
 }
 
-/* ── section tracker ───────────────────────────────────────────────── */
+/* â”€â”€ section tracker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #section-tracker {
   position: fixed;
   bottom: 32px; right: var(--gutter);
@@ -141,7 +150,7 @@ em { font-style: italic; }
   transition: opacity 0.4s var(--ease-out-quart);
 }
 
-/* ── scroll reveals ────────────────────────────────────────────────── */
+/* â”€â”€ scroll reveals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .rv { opacity: 0; transform: translateY(48px); transition: opacity 1s var(--ease-out-expo), transform 1.1s var(--ease-out-expo); }
 .rv.delay-1 { transition-delay: 0.12s; }
 .rv.delay-2 { transition-delay: 0.24s; }
@@ -166,7 +175,7 @@ em { font-style: italic; }
 }
 section { padding-block: clamp(80px, 14vh, 160px); }
 
-/* ── accessibility ─────────────────────────────────────────────────── */
+/* â”€â”€ accessibility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
@@ -182,7 +191,7 @@ section { padding-block: clamp(80px, 14vh, 160px); }
   html { scroll-behavior: auto; }
 }
 
-/* ── navigation ────────────────────────────────────────────────────── */
+/* â”€â”€ navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -269,7 +278,7 @@ nav.scrolled {
   #section-tracker { display: none; }
 }
 
-/* ── hero ──────────────────────────────────────────────────────────── */
+/* â”€â”€ hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -321,7 +330,7 @@ nav.scrolled {
 }
 .hero-scroll.vis { opacity: 0.5; transform: none; }
 
-/* ── section titles ────────────────────────────────────────────────── */
+/* â”€â”€ section titles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .sec-title {
   font-family: var(--f-display);
   font-size: clamp(2.5rem, 5.5vw, 4.2rem);
@@ -337,7 +346,7 @@ nav.scrolled {
   max-width: 52ch;
 }
 
-/* ── about ─────────────────────────────────────────────────────────── */
+/* â”€â”€ about â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .about-head {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -389,12 +398,12 @@ nav.scrolled {
   .about-head { grid-template-columns: 1fr; gap: 24px; }
 }
 
-/* ── projects ──────────────────────────────────────────────────────── */
+/* â”€â”€ projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .proj-head {
   margin-bottom: 64px;
 }
 
-/* featured project — asymmetric layout */
+/* featured project â€” asymmetric layout */
 .fp {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -481,7 +490,21 @@ nav.scrolled {
 .fp-link:hover { color: var(--accent); }
 .fp-link:hover span { transform: translate(3px, -2px); }
 
-/* project visual — atmospheric compositions */
+.fp-links { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.fp-collab {
+  font-family: var(--f-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin-top: 12px;
+}
+.fp-collab a {
+  color: var(--ink-dim);
+  transition: color 0.3s;
+}
+.fp-collab a:hover { color: var(--accent); }
+
+/* project visual â€” atmospheric compositions */
 .fp-visual {
   position: relative;
   border-radius: 6px;
@@ -540,7 +563,7 @@ nav.scrolled {
   background: linear-gradient(0deg, rgba(200, 162, 232, 0.12), transparent);
 }
 
-/* visual composition — code/terminal aesthetic for markmint */
+/* visual composition â€” code/terminal aesthetic for markmint */
 .fp-visual.code-comp {
   background: #0d0d12;
   font-family: var(--f-mono);
@@ -577,7 +600,7 @@ nav.scrolled {
   .fp-content, .fp.reverse .fp-content { order: 1; }
 }
 
-/* ── other projects ────────────────────────────────────────────────── */
+/* â”€â”€ other projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .projects-other {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -622,7 +645,7 @@ nav.scrolled {
   .projects-other { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* ── currently building ────────────────────────────────────────────── */
+/* â”€â”€ currently building â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .building {
   margin-top: 72px;
   padding: 40px 0;
@@ -663,7 +686,7 @@ nav.scrolled {
   border-radius: 3px;
 }
 
-/* ── links ─────────────────────────────────────────────────────────── */
+/* â”€â”€ links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .links-list { display: flex; flex-direction: column; }
 .links-list a {
   display: flex; justify-content: space-between; align-items: center;
@@ -683,7 +706,7 @@ nav.scrolled {
 }
 .links-list a:hover span { color: var(--accent); transform: translateX(4px); }
 
-/* ── footer ────────────────────────────────────────────────────────── */
+/* â”€â”€ footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 footer {
   padding: 48px var(--gutter) 28px;
   font-family: var(--f-mono);
@@ -693,7 +716,7 @@ footer {
   letter-spacing: 0.12em;
 }
 
-/* ── lightbox ──────────────────────────────────────────────────────── */
+/* â”€â”€ lightbox â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .lightbox {
   position: fixed; inset: 0; z-index: 9500;
   background: rgba(10, 10, 15, 0.94);
@@ -712,7 +735,7 @@ footer {
 }
 .lightbox.open img { transform: scale(1); }
 
-/* ── custom cursor ─────────────────────────────────────────────────── */
+/* â”€â”€ custom cursor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (pointer: fine) and (min-width: 769px) {
   .cursor-dot {
     position: fixed; top: 0; left: 0;
@@ -785,7 +808,7 @@ footer {
 
 <div class="container">
 
-  <!-- ── hero ─────────────────────────────────────────────────────── -->
+  <!-- â”€â”€ hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <section class="hero" id="hero">
     <div class="hero-wordmark rv">namanipie</div>
     <div class="hero-line rv" id="heroLine"></div>
@@ -796,7 +819,7 @@ footer {
   </section>
   <div class="bleed bleed-warm"></div>
 
-  <!-- ── about ────────────────────────────────────────────────────── -->
+  <!-- â”€â”€ about â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <section id="about">
     <div class="about-head">
       <div class="rv">
@@ -808,16 +831,16 @@ footer {
     </div>
     <div class="learn-col">
       <div class="l-item rv">
-        <h3>java + data structures</h3>
-        <p>working through the fundamentals from scratch. linked lists, trees, sparse matrices. doing it the hard way so it actually sticks.</p>
+        <h3>backend + data pipelines</h3>
+        <p>building and maintaining production APIs. scraping institutional portals, solving CAPTCHAs with OpenCV, deploying FastAPI services with Docker. writing the kind of code that has to actually work for real users.</p>
       </div>
       <div class="l-item rv">
-        <h3>web development</h3>
-        <p>html, css, javascript. building things like this site to figure out what works, what looks good, and where the line is between tasteful and tryhard.</p>
+        <h3>full-stack applications</h3>
+        <p>working across Flutter, Next.js, FastAPI, Firebase, and PostgreSQL. most of what I build touches multiple layers — from database schemas to the screen someone's actually looking at.</p>
       </div>
       <div class="l-item rv">
-        <h3>linux / systems</h3>
-        <p>broke my arch install three times. finally getting comfortable in the terminal and understanding how the pieces fit together.</p>
+        <h3>ml + intelligence systems</h3>
+        <p>building deterministic prediction engines. question clustering, temporal decay models, laplace smoothing. using real math instead of just throwing everything at an LLM.</p>
       </div>
     </div>
     <div class="skills-row">
@@ -830,7 +853,7 @@ footer {
   </section>
   <div class="bleed"></div>
 
-  <!-- ── projects ─────────────────────────────────────────────────── -->
+  <!-- â”€â”€ projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <section id="projects">
     <div class="proj-head rv">
       <h2 class="sec-title"><em>selected</em> work</h2>
@@ -856,11 +879,13 @@ footer {
         <div class="fp-num">01</div>
         <div class="fp-status"><span class="dot"></span> live</div>
         <h3 class="fp-title">MarkMint</h3>
-        <p class="fp-desc">a deterministic exam intelligence platform. ingests 389+ real university papers, clusters 11k+ questions into canonical families, and predicts upcoming exam topics using temporal decay and laplace smoothing. covers 43 courses across 8 semesters. no hallucination — every prediction is backed by historical evidence.</p>
+        <p class="fp-desc">a deterministic exam intelligence platform. ingests 389+ real university papers, clusters 11k+ questions into canonical families, and predicts upcoming exam topics using temporal decay and laplace smoothing. covers 43 courses across 8 semesters. no hallucination â€” every prediction is backed by historical evidence.</p>
         <div class="fp-stack">
           <span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Python</span>
         </div>
-        <a href="https://github.com/namanipie/markmint" class="fp-link" target="_blank" data-magnetic>view on github <span>↗</span></a>
+        <a href="https://markmint.vercel.app" class="fp-link" target="_blank" data-magnetic>try it live <span>>â†</span></a>
+        <a href="https://github.com/namanipie/markmint" class="fp-link" target="_blank" style="margin-left: 20px;">github <span>>â†</span></a>
+        <div class="fp-collab">with <a href="https://github.com/adityakajala1" target="_blank">aditya kajala</a></div>
       </div>
     </div>
 
@@ -887,13 +912,13 @@ footer {
       </div>
       <div class="fp-content">
         <div class="fp-num">02</div>
-        <div class="fp-status"><span class="dot"></span> in development</div>
+        <div class="fp-status"><span class="dot"></span> maintainer</div>
         <h3 class="fp-title">Console</h3>
-        <p class="fp-desc">a mobile app for students who'd rather check one screen than navigate an entire institutional portal. scrapes attendance, marks, timetable, and day orders through a custom python API with OCR-based captcha handling, then caches everything locally. push notifications, social space, and unified login.</p>
+        <p class="fp-desc">a mobile app for students who'd rather check one screen than navigate an entire institutional portal. I maintain and ship updates — unified login, student portal sync, native SRM integration, and feature patches. push notifications, social space, attendance and marks visualization.</p>
         <div class="fp-stack">
           <span>Flutter</span><span>Dart</span><span>Firebase</span><span>FastAPI</span>
         </div>
-        <a href="https://github.com/namanipie/academia_app" class="fp-link" target="_blank" data-magnetic>view on github <span>↗</span></a>
+        <a href="https://github.com/Akshat2711/academia_app" class="fp-link" target="_blank" data-magnetic>view on github <span>â†—</span></a>
       </div>
     </div>
 
@@ -915,13 +940,13 @@ footer {
       </div>
       <div class="fp-content">
         <div class="fp-num">03</div>
-        <div class="fp-status"><span class="dot"></span> active</div>
+        <div class="fp-status"><span class="dot"></span> maintainer</div>
         <h3 class="fp-title">Scraper API</h3>
-        <p class="fp-desc">the backend that powers Console. a FastAPI service that handles institutional portal authentication, solves CAPTCHAs with OpenCV and Tesseract, reuses sessions, retries failed parsing, and fetches 9 data endpoints concurrently through connection pooling. dockerized and deployed.</p>
+        <p class="fp-desc">the backend powering Console. I maintain and extend the scraping logic — session handling, retry flows, parser fixes, and new endpoint support. a FastAPI service with OCR-based CAPTCHA solving, connection pooling, and 9 concurrent data fetches. dockerized.</p>
         <div class="fp-stack">
           <span>FastAPI</span><span>Python</span><span>OpenCV</span><span>Docker</span>
         </div>
-        <a href="https://github.com/Akshat2711/academia_scrapper_api_fast" class="fp-link" target="_blank" data-magnetic>view on github <span>↗</span></a>
+        <a href="https://github.com/Akshat2711/academia_scrapper_api_fast" class="fp-link" target="_blank" data-magnetic>view on github <span>â†—</span></a>
       </div>
     </div>
 
@@ -929,12 +954,12 @@ footer {
       <a href="https://github.com/namanipie/namanio" class="op-card rv" target="_blank">
         <h4>this website</h4>
         <p>a personal corner of the internet. single-file, hand-built, dark/purple aesthetic. the only project that never feels done.</p>
-        <span class="op-link">source ↗</span>
+        <span class="op-link">source â†—</span>
       </a>
       <a href="https://github.com/boykopovar/AnyPS5" class="op-card rv" target="_blank">
         <h4>AnyPS5 (contrib)</h4>
         <p>contributed a fix for relinker overflowing file offsets in the upstream open-source C++ project.</p>
-        <span class="op-link">github ↗</span>
+        <span class="op-link">github â†—</span>
       </a>
     </div>
 
@@ -948,26 +973,26 @@ footer {
         </div>
         <div class="building-item">
           <span class="b-name">Console</span>
-          <span class="b-status">in dev</span>
+          <span class="b-status">maintainer</span>
         </div>
         <div class="building-item">
           <span class="b-name">Scraper API</span>
-          <span class="b-status">active</span>
+          <span class="b-status">maintainer</span>
         </div>
       </div>
     </div>
   </section>
   <div class="bleed"></div>
 
-  <!-- ── links ────────────────────────────────────────────────────── -->
+  <!-- â”€â”€ links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <section id="links">
     <div class="proj-head rv">
       <h2 class="sec-title">find <em>me.</em></h2>
     </div>
     <div class="links-list rv">
-      <a href="https://github.com/namanipie" target="_blank">github <span>↗</span></a>
-      <a href="https://www.linkedin.com/in/namannkumar/" target="_blank">linkedin <span>↗</span></a>
-      <a href="mailto:namanrathore1507@gmail.com">email <span>↗</span></a>
+      <a href="https://github.com/namanipie" target="_blank">github <span>â†—</span></a>
+      <a href="https://www.linkedin.com/in/namannkumar/" target="_blank">linkedin <span>â†—</span></a>
+      <a href="mailto:namanrathore1507@gmail.com">email <span>â†—</span></a>
       <a href="javascript:void(0)" id="discordCopy">discord <span>nam4n</span></a>
     </div>
   </section>
@@ -980,14 +1005,14 @@ footer {
 
 
 <script>
-/* ══════════════════════════════════════════════════════════════════════
-   namanipie — all JS
-   ══════════════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   namanipie â€” all JS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 769px)').matches;
 const isMobile = window.innerWidth < 769;
 
-/* ── page entrance ─────────────────────────────────────────────────── */
+/* â”€â”€ page entrance â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 window.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(() => {
     document.body.classList.add('loaded');
@@ -998,7 +1023,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ── particles (very subtle, paused off-screen) ────────────────────── */
+/* â”€â”€ particles (very subtle, paused off-screen) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let w, h, animating = true;
@@ -1044,7 +1069,7 @@ document.addEventListener('visibilitychange', () => {
 
 if (!reducedMotion) { drawParticles(); } else { canvas.style.display = 'none'; }
 
-/* ── IntersectionObserver reveals ──────────────────────────────────── */
+/* â”€â”€ IntersectionObserver reveals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1058,7 +1083,7 @@ document.querySelectorAll('.rv, .rv-slide, .rv-scale, .rv-img, .skill-tags').for
   revealObs.observe(el);
 });
 
-/* ── staggered project reveals ─────────────────────────────────────── */
+/* â”€â”€ staggered project reveals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const projObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1072,7 +1097,7 @@ const projObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.fp').forEach(el => projObs.observe(el));
 
-/* ── parallax on scroll (transform-only, GPU-friendly) ─────────────── */
+/* â”€â”€ parallax on scroll (transform-only, GPU-friendly) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const parallaxEls = document.querySelectorAll('[data-parallax]');
 if (!reducedMotion && parallaxEls.length) {
   let pTicking = false;
@@ -1094,7 +1119,7 @@ if (!reducedMotion && parallaxEls.length) {
   }, { passive: true });
 }
 
-/* ── scroll-linked project image movement ──────────────────────────── */
+/* â”€â”€ scroll-linked project image movement â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 if (!reducedMotion && isDesktop) {
   let sTicking = false;
   window.addEventListener('scroll', () => {
@@ -1117,7 +1142,7 @@ if (!reducedMotion && isDesktop) {
   }, { passive: true });
 }
 
-/* ── scroll progress & nav state ───────────────────────────────────── */
+/* â”€â”€ scroll progress & nav state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const progressBar = document.getElementById('scroll-progress');
 const tracker = document.getElementById('section-tracker');
 const navEl = document.querySelector('nav');
@@ -1165,12 +1190,12 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* ── nav overlay ──────────────────────────────────────────────────── */
+/* â”€â”€ nav overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function toggleNav() {
   document.getElementById('navOverlay').classList.toggle('open');
 }
 
-/* ── discord copy ─────────────────────────────────────────────────── */
+/* â”€â”€ discord copy â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 document.getElementById('discordCopy').addEventListener('click', function() {
   navigator.clipboard.writeText('nam4n').then(() => {
     const span = this.querySelector('span');
@@ -1181,7 +1206,7 @@ document.getElementById('discordCopy').addEventListener('click', function() {
   });
 });
 
-/* ── custom cursor (desktop only) ─────────────────────────────────── */
+/* â”€â”€ custom cursor (desktop only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 if (isDesktop) {
   const cursor = document.getElementById('cursorDot');
   const cursorLabel = document.getElementById('cursorLabel');
@@ -1210,7 +1235,7 @@ if (isDesktop) {
   });
 }
 
-/* ── magnetic buttons (desktop, GPU-friendly) ──────────────────────── */
+/* â”€â”€ magnetic buttons (desktop, GPU-friendly) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 if (isDesktop && !reducedMotion) {
   document.querySelectorAll('[data-magnetic]').forEach(el => {
     el.addEventListener('mousemove', e => {
