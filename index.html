@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-/* â”€â”€ tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── tokens ────────────────────────────────────────────────────────── */
 :root {
   color-scheme: dark;
   --ground:    #0a0a0f;
@@ -44,7 +44,7 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* â”€â”€ base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── base ──────────────────────────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 body {
@@ -68,7 +68,7 @@ em { font-style: italic; }
 ::-webkit-scrollbar-track { background: var(--ground); }
 ::-webkit-scrollbar-thumb { background: var(--ink-faint); border-radius: 3px; }
 
-/* â”€â”€ background layers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── background layers ─────────────────────────────────────────────── */
 .grain {
   position: fixed; inset: 0; pointer-events: none; z-index: 100;
   opacity: 0.055;
@@ -90,7 +90,7 @@ em { font-style: italic; }
   transition: opacity 1.5s ease;
 }
 
-/* â”€â”€ section bleed dividers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── section bleed dividers ────────────────────────────────────────── */
 .bleed {
   position: relative;
   height: clamp(60px, 10vh, 120px);
@@ -125,7 +125,7 @@ em { font-style: italic; }
   transition: transform 0.1s linear;
 }
 
-/* â”€â”€ scroll progress â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── scroll progress ───────────────────────────────────────────────── */
 #scroll-progress {
   position: fixed; top: 0; left: 0; z-index: 950;
   height: 1px; width: 100%;
@@ -136,7 +136,7 @@ em { font-style: italic; }
   transform: scaleX(0);
 }
 
-/* â”€â”€ section tracker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── section tracker ───────────────────────────────────────────────── */
 #section-tracker {
   position: fixed;
   bottom: 32px; right: var(--gutter);
@@ -150,7 +150,7 @@ em { font-style: italic; }
   transition: opacity 0.4s var(--ease-out-quart);
 }
 
-/* â”€â”€ scroll reveals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── scroll reveals ────────────────────────────────────────────────── */
 .rv { opacity: 0; transform: translateY(48px); transition: opacity 1s var(--ease-out-expo), transform 1.1s var(--ease-out-expo); }
 .rv.delay-1 { transition-delay: 0.12s; }
 .rv.delay-2 { transition-delay: 0.24s; }
@@ -175,7 +175,7 @@ em { font-style: italic; }
 }
 section { padding-block: clamp(80px, 14vh, 160px); }
 
-/* â”€â”€ accessibility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── accessibility ─────────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
@@ -191,7 +191,7 @@ section { padding-block: clamp(80px, 14vh, 160px); }
   html { scroll-behavior: auto; }
 }
 
-/* â”€â”€ navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── navigation ────────────────────────────────────────────────────── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -278,7 +278,7 @@ nav.scrolled {
   #section-tracker { display: none; }
 }
 
-/* â”€â”€ hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── hero ──────────────────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -330,7 +330,7 @@ nav.scrolled {
 }
 .hero-scroll.vis { opacity: 0.5; transform: none; }
 
-/* â”€â”€ section titles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── section titles ────────────────────────────────────────────────── */
 .sec-title {
   font-family: var(--f-display);
   font-size: clamp(2.5rem, 5.5vw, 4.2rem);
@@ -346,7 +346,7 @@ nav.scrolled {
   max-width: 52ch;
 }
 
-/* â”€â”€ about â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── about ─────────────────────────────────────────────────────────── */
 .about-head {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -398,12 +398,12 @@ nav.scrolled {
   .about-head { grid-template-columns: 1fr; gap: 24px; }
 }
 
-/* â”€â”€ projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── projects ──────────────────────────────────────────────────────── */
 .proj-head {
   margin-bottom: 64px;
 }
 
-/* featured project â€” asymmetric layout */
+/* featured project — asymmetric layout */
 .fp {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -490,7 +490,6 @@ nav.scrolled {
 .fp-link:hover { color: var(--accent); }
 .fp-link:hover span { transform: translate(3px, -2px); }
 
-.fp-links { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .fp-collab {
   font-family: var(--f-mono);
   font-size: 0.58rem;
@@ -504,7 +503,7 @@ nav.scrolled {
 }
 .fp-collab a:hover { color: var(--accent); }
 
-/* project visual â€” atmospheric compositions */
+/* project visual — atmospheric compositions */
 .fp-visual {
   position: relative;
   border-radius: 6px;
@@ -563,7 +562,7 @@ nav.scrolled {
   background: linear-gradient(0deg, rgba(200, 162, 232, 0.12), transparent);
 }
 
-/* visual composition â€” code/terminal aesthetic for markmint */
+/* visual composition — code/terminal aesthetic for markmint */
 .fp-visual.code-comp {
   background: #0d0d12;
   font-family: var(--f-mono);
@@ -600,7 +599,7 @@ nav.scrolled {
   .fp-content, .fp.reverse .fp-content { order: 1; }
 }
 
-/* â”€â”€ other projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── other projects ────────────────────────────────────────────────── */
 .projects-other {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -645,7 +644,7 @@ nav.scrolled {
   .projects-other { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* â”€â”€ currently building â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── currently building ────────────────────────────────────────────── */
 .building {
   margin-top: 72px;
   padding: 40px 0;
@@ -686,7 +685,7 @@ nav.scrolled {
   border-radius: 3px;
 }
 
-/* â”€â”€ links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── links ─────────────────────────────────────────────────────────── */
 .links-list { display: flex; flex-direction: column; }
 .links-list a {
   display: flex; justify-content: space-between; align-items: center;
@@ -706,7 +705,7 @@ nav.scrolled {
 }
 .links-list a:hover span { color: var(--accent); transform: translateX(4px); }
 
-/* â”€â”€ footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── footer ────────────────────────────────────────────────────────── */
 footer {
   padding: 48px var(--gutter) 28px;
   font-family: var(--f-mono);
@@ -716,7 +715,7 @@ footer {
   letter-spacing: 0.12em;
 }
 
-/* â”€â”€ lightbox â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── lightbox ──────────────────────────────────────────────────────── */
 .lightbox {
   position: fixed; inset: 0; z-index: 9500;
   background: rgba(10, 10, 15, 0.94);
@@ -735,7 +734,7 @@ footer {
 }
 .lightbox.open img { transform: scale(1); }
 
-/* â”€â”€ custom cursor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── custom cursor ─────────────────────────────────────────────────── */
 @media (pointer: fine) and (min-width: 769px) {
   .cursor-dot {
     position: fixed; top: 0; left: 0;
@@ -808,7 +807,7 @@ footer {
 
 <div class="container">
 
-  <!-- â”€â”€ hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── hero ─────────────────────────────────────────────────────── -->
   <section class="hero" id="hero">
     <div class="hero-wordmark rv">namanipie</div>
     <div class="hero-line rv" id="heroLine"></div>
@@ -819,7 +818,7 @@ footer {
   </section>
   <div class="bleed bleed-warm"></div>
 
-  <!-- â”€â”€ about â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── about ────────────────────────────────────────────────────── -->
   <section id="about">
     <div class="about-head">
       <div class="rv">
@@ -853,7 +852,7 @@ footer {
   </section>
   <div class="bleed"></div>
 
-  <!-- â”€â”€ projects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── projects ─────────────────────────────────────────────────── -->
   <section id="projects">
     <div class="proj-head rv">
       <h2 class="sec-title"><em>selected</em> work</h2>
@@ -879,12 +878,12 @@ footer {
         <div class="fp-num">01</div>
         <div class="fp-status"><span class="dot"></span> live</div>
         <h3 class="fp-title">MarkMint</h3>
-        <p class="fp-desc">a deterministic exam intelligence platform. ingests 389+ real university papers, clusters 11k+ questions into canonical families, and predicts upcoming exam topics using temporal decay and laplace smoothing. covers 43 courses across 8 semesters. no hallucination â€” every prediction is backed by historical evidence.</p>
+        <p class="fp-desc">a deterministic exam intelligence platform. ingests 389+ real university papers, clusters 11k+ questions into canonical families, and predicts upcoming exam topics using temporal decay and laplace smoothing. covers 43 courses across 8 semesters. no hallucination — every prediction is backed by historical evidence.</p>
         <div class="fp-stack">
           <span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Python</span>
         </div>
-        <a href="https://markmint.vercel.app" class="fp-link" target="_blank" data-magnetic>try it live <span>>â†</span></a>
-        <a href="https://github.com/namanipie/markmint" class="fp-link" target="_blank" style="margin-left: 20px;">github <span>>â†</span></a>
+        <a href="https://markmint.vercel.app" class="fp-link" target="_blank" data-magnetic>try it live <span>↗</span></a>
+        <a href="https://github.com/namanipie/markmint" class="fp-link" target="_blank" style="margin-left: 20px;">github <span>↗</span></a>
         <div class="fp-collab">with <a href="https://github.com/adityakajala1" target="_blank">aditya kajala</a></div>
       </div>
     </div>
@@ -918,7 +917,7 @@ footer {
         <div class="fp-stack">
           <span>Flutter</span><span>Dart</span><span>Firebase</span><span>FastAPI</span>
         </div>
-        <a href="https://github.com/Akshat2711/academia_app" class="fp-link" target="_blank" data-magnetic>view on github <span>â†—</span></a>
+        <a href="https://github.com/Akshat2711/academia_app" class="fp-link" target="_blank" data-magnetic>view on github <span>↗</span></a>
       </div>
     </div>
 
@@ -946,7 +945,7 @@ footer {
         <div class="fp-stack">
           <span>FastAPI</span><span>Python</span><span>OpenCV</span><span>Docker</span>
         </div>
-        <a href="https://github.com/Akshat2711/academia_scrapper_api_fast" class="fp-link" target="_blank" data-magnetic>view on github <span>â†—</span></a>
+        <a href="https://github.com/Akshat2711/academia_scrapper_api_fast" class="fp-link" target="_blank" data-magnetic>view on github <span>↗</span></a>
       </div>
     </div>
 
@@ -954,12 +953,12 @@ footer {
       <a href="https://github.com/namanipie/namanio" class="op-card rv" target="_blank">
         <h4>this website</h4>
         <p>a personal corner of the internet. single-file, hand-built, dark/purple aesthetic. the only project that never feels done.</p>
-        <span class="op-link">source â†—</span>
+        <span class="op-link">source ↗</span>
       </a>
       <a href="https://github.com/boykopovar/AnyPS5" class="op-card rv" target="_blank">
         <h4>AnyPS5 (contrib)</h4>
         <p>contributed a fix for relinker overflowing file offsets in the upstream open-source C++ project.</p>
-        <span class="op-link">github â†—</span>
+        <span class="op-link">github ↗</span>
       </a>
     </div>
 
@@ -984,15 +983,15 @@ footer {
   </section>
   <div class="bleed"></div>
 
-  <!-- â”€â”€ links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- ── links ────────────────────────────────────────────────────── -->
   <section id="links">
     <div class="proj-head rv">
       <h2 class="sec-title">find <em>me.</em></h2>
     </div>
     <div class="links-list rv">
-      <a href="https://github.com/namanipie" target="_blank">github <span>â†—</span></a>
-      <a href="https://www.linkedin.com/in/namannkumar/" target="_blank">linkedin <span>â†—</span></a>
-      <a href="mailto:namanrathore1507@gmail.com">email <span>â†—</span></a>
+      <a href="https://github.com/namanipie" target="_blank">github <span>↗</span></a>
+      <a href="https://www.linkedin.com/in/namannkumar/" target="_blank">linkedin <span>↗</span></a>
+      <a href="mailto:namanrathore1507@gmail.com">email <span>↗</span></a>
       <a href="javascript:void(0)" id="discordCopy">discord <span>nam4n</span></a>
     </div>
   </section>
@@ -1005,14 +1004,14 @@ footer {
 
 
 <script>
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   namanipie â€” all JS
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════════════════════
+   namanipie — all JS
+   ══════════════════════════════════════════════════════════════════════ */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 769px)').matches;
 const isMobile = window.innerWidth < 769;
 
-/* â”€â”€ page entrance â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── page entrance ─────────────────────────────────────────────────── */
 window.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(() => {
     document.body.classList.add('loaded');
@@ -1023,7 +1022,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* â”€â”€ particles (very subtle, paused off-screen) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── particles (very subtle, paused off-screen) ────────────────────── */
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let w, h, animating = true;
@@ -1069,7 +1068,7 @@ document.addEventListener('visibilitychange', () => {
 
 if (!reducedMotion) { drawParticles(); } else { canvas.style.display = 'none'; }
 
-/* â”€â”€ IntersectionObserver reveals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── IntersectionObserver reveals ──────────────────────────────────── */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1083,7 +1082,7 @@ document.querySelectorAll('.rv, .rv-slide, .rv-scale, .rv-img, .skill-tags').for
   revealObs.observe(el);
 });
 
-/* â”€â”€ staggered project reveals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── staggered project reveals ─────────────────────────────────────── */
 const projObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1097,7 +1096,7 @@ const projObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.fp').forEach(el => projObs.observe(el));
 
-/* â”€â”€ parallax on scroll (transform-only, GPU-friendly) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── parallax on scroll (transform-only, GPU-friendly) ─────────────── */
 const parallaxEls = document.querySelectorAll('[data-parallax]');
 if (!reducedMotion && parallaxEls.length) {
   let pTicking = false;
@@ -1119,7 +1118,7 @@ if (!reducedMotion && parallaxEls.length) {
   }, { passive: true });
 }
 
-/* â”€â”€ scroll-linked project image movement â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── scroll-linked project image movement ──────────────────────────── */
 if (!reducedMotion && isDesktop) {
   let sTicking = false;
   window.addEventListener('scroll', () => {
@@ -1142,7 +1141,7 @@ if (!reducedMotion && isDesktop) {
   }, { passive: true });
 }
 
-/* â”€â”€ scroll progress & nav state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── scroll progress & nav state ───────────────────────────────────── */
 const progressBar = document.getElementById('scroll-progress');
 const tracker = document.getElementById('section-tracker');
 const navEl = document.querySelector('nav');
@@ -1190,12 +1189,12 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* â”€â”€ nav overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── nav overlay ──────────────────────────────────────────────────── */
 function toggleNav() {
   document.getElementById('navOverlay').classList.toggle('open');
 }
 
-/* â”€â”€ discord copy â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── discord copy ─────────────────────────────────────────────────── */
 document.getElementById('discordCopy').addEventListener('click', function() {
   navigator.clipboard.writeText('nam4n').then(() => {
     const span = this.querySelector('span');
@@ -1206,7 +1205,7 @@ document.getElementById('discordCopy').addEventListener('click', function() {
   });
 });
 
-/* â”€â”€ custom cursor (desktop only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── custom cursor (desktop only) ─────────────────────────────────── */
 if (isDesktop) {
   const cursor = document.getElementById('cursorDot');
   const cursorLabel = document.getElementById('cursorLabel');
@@ -1235,7 +1234,7 @@ if (isDesktop) {
   });
 }
 
-/* â”€â”€ magnetic buttons (desktop, GPU-friendly) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── magnetic buttons (desktop, GPU-friendly) ──────────────────────── */
 if (isDesktop && !reducedMotion) {
   document.querySelectorAll('[data-magnetic]').forEach(el => {
     el.addEventListener('mousemove', e => {
